@@ -80,7 +80,6 @@ library(randomForest)
 titanic.model<-randomForest(formula = survived.formula, data=titanic.train, ntree= 500, mtry=3,nodesize=0.01*nrow(titanic.train))
 features.euqtion<- "Survived ~ Pclass + Sex + Age + SibSp + Parch +Fare + Embarked"
 Survived <- predict(titanic.model, newdata = titanic.test)
-Survived
 PassengerId<- titanic.test$PassengerId
 output.df<-as.data.frame(PassengerId)
 output.df$Survived <- Survived
